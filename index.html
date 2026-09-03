@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disability Benefits Help — Free Phone Consultation</title>
+<meta name="description" content="Unable to work because of a medical condition? A free phone consultation can tell you whether you may qualify for Social Security Disability benefits. Attorney advertising. Not affiliated with the Social Security Administration.">
+<meta name="robots" content="index,follow">
+<script src="pixel.js"></script>
+<style>
+:root{
+  --navy:#16263f; --navy2:#1e3355; --navy-soft:#eef2f7;
+  --teal:#127b7f; --teal2:#159aa0; --teal-soft:#e6f4f4;
+  --ink:#1d2733; --muted:#5c6b7d; --line:#e2e8ef;
+  --bg:#f6f8fb; --card:#ffffff;
+  --go:#0f7a3d; --go2:#12945a;
+  --shadow:0 18px 50px rgba(22,38,63,.11);
+  --shadow-sm:0 6px 20px rgba(22,38,63,.07);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:84px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+.hdr{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
+.hdr-in{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;color:var(--navy);letter-spacing:-.3px}
+.brand .mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;display:grid;place-items:center;font-size:13px;font-weight:800;letter-spacing:.5px;box-shadow:var(--shadow-sm)}
+.brand b{color:var(--teal);font-weight:800}
+.hdr-status{font-size:12px;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:99px;background:var(--go);box-shadow:0 0 0 3px rgba(15,122,61,.15)}
+.dot.off{background:#9aa7b5;box-shadow:0 0 0 3px rgba(154,167,181,.15)}
+
+.wrap{max-width:660px;margin:0 auto;padding:22px 20px 30px}
+.pill{display:inline-flex;align-items:center;gap:7px;background:var(--teal-soft);color:var(--teal);border-radius:99px;padding:6px 13px;font-size:11.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase}
+.intro{text-align:center;margin:14px 0 4px}
+.intro h1{font-size:30px;line-height:1.22;color:var(--navy);margin:12px 0 12px;font-weight:800;letter-spacing:-.5px}
+.intro p{margin:0 auto;color:var(--muted);font-size:16.5px;max-width:520px}
+
+/* The call button — the entire point of the page */
+.callbox{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:26px 24px;margin:22px 0 18px;text-align:center}
+.call-btn{display:flex;align-items:center;justify-content:center;gap:13px;width:100%;background:linear-gradient(135deg,var(--go),#12945a);color:#fff;border:0;border-radius:16px;padding:20px 18px;font-size:23px;font-weight:800;letter-spacing:-.3px;font-family:inherit;cursor:pointer;box-shadow:0 12px 30px rgba(15,122,61,.28);transition:transform .12s,box-shadow .12s;text-align:center}
+.call-btn:active{transform:translateY(2px);box-shadow:0 6px 18px rgba(15,122,61,.28)}
+.call-btn svg{width:26px;height:26px;fill:#fff;flex:none}
+.call-num{display:block;font-size:15px;font-weight:700;color:var(--navy);margin-top:14px;letter-spacing:.2px}
+.call-sub{font-size:13.5px;color:var(--muted);margin:6px 0 0}
+.free{display:inline-block;background:var(--navy-soft);color:var(--navy);font-size:12px;font-weight:800;border-radius:99px;padding:5px 12px;margin-bottom:16px;letter-spacing:.3px}
+
+.tbadges{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:18px 0 0}
+.tbadge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:99px;padding:6px 12px;font-size:12.5px;font-weight:700;color:var(--navy);box-shadow:var(--shadow-sm)}
+.tbadge svg{width:14px;height:14px;fill:var(--teal)}
+
+.qual{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 24px 20px;box-shadow:var(--shadow-sm);margin:20px 0}
+.qual h2{font-size:18px;color:var(--navy);margin:0 0 4px;font-weight:800;letter-spacing:-.2px}
+.qual .lede{font-size:14px;color:var(--muted);margin:0 0 16px}
+.qual ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.qual li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;color:var(--ink);font-weight:600;line-height:1.45}
+.qual li svg{width:20px;height:20px;fill:var(--teal);flex:none;margin-top:2px}
+.qual .note{margin:16px 0 0;padding-top:15px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+
+.how{margin:24px 0 8px}
+.how h2{font-size:18px;color:var(--navy);margin:0 0 14px;font-weight:800;text-align:center;letter-spacing:-.2px}
+.steps{display:grid;gap:12px}
+.stp{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-sm)}
+.stp .n{width:28px;height:28px;border-radius:99px;background:var(--navy);color:#fff;font-size:13px;font-weight:800;display:grid;place-items:center;flex:none}
+.stp h3{margin:0 0 3px;font-size:15.5px;color:var(--navy);font-weight:800}
+.stp p{margin:0;font-size:14px;color:var(--muted)}
+
+/* Sticky bar — always one tap from dialling */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:11px 16px calc(11px + env(safe-area-inset-bottom));box-shadow:0 -6px 24px rgba(22,38,63,.09)}
+.sticky-in{max-width:660px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.sticky .call-btn{padding:15px 16px;font-size:18px;border-radius:14px;box-shadow:0 8px 20px rgba(15,122,61,.25)}
+.sticky .call-btn svg{width:21px;height:21px}
+
+footer{background:var(--navy);color:#c8d3e2;padding:26px 20px 30px;margin-top:26px;font-size:12.5px;line-height:1.65}
+footer .fin{max-width:660px;margin:0 auto}
+footer a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+footer .disc{background:rgba(255,255,255,.07);border-radius:12px;padding:14px 16px;margin:0 0 16px}
+footer .disc strong{color:#fff;display:block;margin-bottom:4px;font-size:13px}
+footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <div class="brand">
+      <span class="mark">DBH</span>
+      <span>Disability Benefits <b>Help</b></span>
+    </div>
+    <div class="hdr-status"><span class="dot" id="statusDot"></span><span id="statusTxt">Open now</span></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="intro">
+    <span class="pill">Free consultation · No upfront fees</span>
+    <h1>Unable to work? You may qualify for disability benefits.</h1>
+    <p>Speak with someone now about whether a Social Security Disability claim may be available to you. The call is free and there is no obligation.</p>
+  </div>
+
+  <div class="callbox">
+    <span class="free">100% FREE CALL · NO OBLIGATION</span>
+    <a class="call-btn" id="callMain" href="#">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg>
+      <span>Call Now</span>
+    </a>
+    <span class="call-num" id="callNum">(848) 863-6987</span>
+    <p class="call-sub" id="callSub">Lines open 8:00am – 8:00pm ET, Monday to Saturday</p>
+
+    <div class="tbadges">
+      <span class="tbadge"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.6 3.8 10.7 9 12 5.2-1.3 9-6.4 9-12V5l-9-4z"/></svg>Confidential</span>
+      <span class="tbadge"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg>No fee unless you win</span>
+      <span class="tbadge"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 9.7 8 10.9 4.6-1.2 8-5.9 8-10.9V6l-8-4z"/></svg>Nationwide</span>
+    </div>
+  </div>
+
+  <div class="qual">
+    <h2>You may have a claim if…</h2>
+    <p class="lede">Most people who qualify meet all of the following. If that sounds like you, it is worth a call.</p>
+    <ul>
+      <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>A medical condition has kept you out of work for 12 months, or is expected to</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You are between 18 and 65</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You have worked and paid into Social Security in recent years</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You are being treated by a doctor for the condition</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You are not already receiving disability benefits</span></li>
+    </ul>
+    <p class="note"><strong>Already been denied?</strong> That is normal — most first applications are turned down. A denial does not end your claim, and appeals are often where cases are won. It is still worth calling.</p>
+  </div>
+
+  <div class="how">
+    <h2>What happens when you call</h2>
+    <div class="steps">
+      <div class="stp"><span class="n">1</span><div><h3>A few short questions</h3><p>About your condition, your work history and where you are in the process. Takes a couple of minutes.</p></div></div>
+      <div class="stp"><span class="n">2</span><div><h3>You find out where you stand</h3><p>Whether a claim may be available, and what the realistic next step is.</p></div></div>
+      <div class="stp"><span class="n">3</span><div><h3>You decide</h3><p>No obligation and no upfront cost. Representation in these cases is normally paid only if benefits are awarded.</p></div></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="sticky">
+  <div class="sticky-in">
+    <a class="call-btn" id="callSticky" href="#">
+      <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg>
+      <span id="stickyTxt">Call Now — Free</span>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="fin">
+    <div class="disc">
+      <strong>Not a government website.</strong>
+      This site is not affiliated with, endorsed by, or operated by the Social Security Administration or any government agency. We are a private organisation providing free information and connecting people with representatives who handle disability claims.
+    </div>
+    <p><strong style="color:#fff">Attorney advertising.</strong> This site is operated by <span id="opName">Legal Advocate Group</span>. Contacting us does not create an attorney-client relationship and no attorney-client relationship is formed until a written agreement is signed. Prior results do not guarantee a similar outcome. Case evaluations are free and there is no obligation.</p>
+    <p>Calling the number on this page connects you with an intake representative who may refer your matter to a participating law firm or advocate. Not available in all states.</p>
+    <p id="footAddr">Legal Advocate Group · 4400 RT 9 South, Suite 1000, Freehold, NJ 07728</p>
+    <div class="links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+      <a href="disclaimer.html">Legal Disclaimer</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ------------------------------------------------------------------
+   CONFIG — the only lines that change per deal.
+   PHONE_DIAL is what the phone actually dials, so it must be in full
+   international form. PHONE_DISPLAY is only what the visitor reads.
+   Keeping them separate means a pretty format can never break dialling.
+   ------------------------------------------------------------------ */
+var PHONE_DISPLAY = '(848) 863-6987';
+var PHONE_DIAL    = '+18488636987';
+var OPERATOR      = 'Legal Advocate Group';
+
+/* Business hours in US Eastern, 24h. Saturday included, Sunday closed.
+   These only change what the page SAYS — the button always dials, because
+   a visitor who wants to call at 2am should never be blocked from trying.
+   Telling them the line is closed is honest; disabling the button is not. */
+var OPEN_HOUR = 8, CLOSE_HOUR = 20, OPEN_DAYS = [1,2,3,4,5,6];
+
+/* ------------------------------------------------------------------ */
+
+document.getElementById('callNum').textContent = PHONE_DISPLAY;
+document.getElementById('opName').textContent  = OPERATOR;
+
+var telHref = 'tel:' + PHONE_DIAL;
+var mainBtn = document.getElementById('callMain');
+var stickyBtn = document.getElementById('callSticky');
+mainBtn.href = telHref;
+stickyBtn.href = telHref;
+
+/* Open/closed state. Read the hour in Eastern regardless of where the
+   visitor is, otherwise someone in California sees "open" three hours
+   early and rings a phone nobody is sitting next to. */
+function easternNow(){
+  var s = new Date().toLocaleString('en-US', {timeZone:'America/New_York'});
+  return new Date(s);
+}
+function refreshStatus(){
+  var d = easternNow(), h = d.getHours(), day = d.getDay();
+  var open = OPEN_DAYS.indexOf(day) !== -1 && h >= OPEN_HOUR && h < CLOSE_HOUR;
+  var dot = document.getElementById('statusDot');
+  var txt = document.getElementById('statusTxt');
+  var sub = document.getElementById('callSub');
+  var stk = document.getElementById('stickyTxt');
+  if(open){
+    dot.className = 'dot';
+    txt.textContent = 'Open now';
+    sub.textContent = 'Lines open 8:00am – 8:00pm ET, Monday to Saturday';
+    stk.textContent = 'Call Now — Free';
+  }else{
+    dot.className = 'dot off';
+    txt.textContent = 'Closed';
+    /* Say when they can get through rather than just "closed" — a visitor
+       who knows the time to call back is still a lead; one who feels the
+       door is shut is gone. */
+    sub.textContent = 'Lines are closed right now. Open 8:00am – 8:00pm ET, Monday to Saturday — you can still call and leave a message.';
+    stk.textContent = 'Call & leave a message';
+  }
+}
+refreshStatus();
+setInterval(refreshStatus, 60000);
+
+/* Tracking. A tap on a tel: link is the only conversion this page has —
+   there is no form submit and no thank-you screen to hang it on, so the
+   tap IS the lead event. Fired before navigation, because on mobile the
+   dialler takes over the moment the link resolves. */
+var fired = false;
+function trackCall(){
+  if(fired) return;      /* one lead per visitor, not one per tap */
+  fired = true;
+  if(typeof rcaTrackLead === 'function'){ rcaTrackLead(); }
+}
+mainBtn.addEventListener('click', trackCall);
+stickyBtn.addEventListener('click', trackCall);
+
+/* View event, same as the funnel, so the two campaigns report alike. */
+if(typeof rcaTrackStart === 'function'){ rcaTrackStart(); }
+</script>
+
+</body>
+</html>
