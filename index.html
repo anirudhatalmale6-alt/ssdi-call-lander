@@ -136,12 +136,19 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
     <div class="bar"><i id="gbar"></i></div>
 
     <!-- Question order is deliberate: the criteria that reject the most people
-         come first, so anyone who cannot qualify finds out in one tap instead
-         of seven. Every question below is one of the buyer's stated transfer
-         criteria — nothing here is curiosity. -->
+         come first, so anyone who cannot qualify finds out in one tap rather
+         than five. Every question is one of the buyer's transfer criteria.
+
+         Two of their seven rules are NOT asked here — seen-a-doctor-this-year
+         and the Alaska/territories exclusion. Both eliminate almost nobody
+         (anyone genuinely off work a year has seen a doctor; the territories
+         are a rounding error and ad targeting excludes them upstream), so
+         asking cost more in drop-off than it saved in wasted calls. Intake
+         still checks both. If the buyer starts rejecting calls on either
+         ground, add them back. -->
 
     <div class="step on" data-q="0">
-      <span class="qnum">Question 1 of 7</span>
+      <span class="qnum">Question 1 of 5</span>
       <h2>What is your age?</h2>
       <div class="opts">
         <button type="button" data-a="pass">50 to 63</button>
@@ -151,7 +158,7 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
     </div>
 
     <div class="step" data-q="1">
-      <span class="qnum">Question 2 of 7</span>
+      <span class="qnum">Question 2 of 5</span>
       <h2>Has a medical condition kept you from working for 12 months, or is it expected to?</h2>
       <div class="opts">
         <button type="button" data-a="pass">Yes</button>
@@ -161,7 +168,7 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
     </div>
 
     <div class="step" data-q="2">
-      <span class="qnum">Question 3 of 7</span>
+      <span class="qnum">Question 3 of 5</span>
       <h2>Have you worked at least 5 of the last 10 years?</h2>
       <div class="opts">
         <button type="button" data-a="pass">Yes</button>
@@ -169,17 +176,8 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
       </div>
     </div>
 
-    <div class="step" data-q="3">
-      <span class="qnum">Question 4 of 7</span>
-      <h2>Have you seen a doctor about the condition in the past year?</h2>
-      <div class="opts">
-        <button type="button" data-a="pass">Yes</button>
-        <button type="button" data-a="fail">No</button>
-      </div>
-    </div>
-
-    <div class="step" data-q="4">
-      <span class="qnum">Question 5 of 7</span>
+        <div class="step" data-q="3">
+      <span class="qnum">Question 4 of 5</span>
       <h2>Are you currently receiving any Social Security benefits?</h2>
       <div class="opts">
         <button type="button" data-a="pass">No</button>
@@ -187,8 +185,8 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
       </div>
     </div>
 
-    <div class="step" data-q="5">
-      <span class="qnum">Question 6 of 7</span>
+    <div class="step" data-q="4">
+      <span class="qnum">Question 5 of 5</span>
       <h2>Are you already working with an attorney or representative on this claim?</h2>
       <div class="opts">
         <button type="button" data-a="pass">No</button>
@@ -196,15 +194,7 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
       </div>
     </div>
 
-    <div class="step" data-q="6">
-      <span class="qnum">Question 7 of 7</span>
-      <h2>Do you live in Alaska, Puerto Rico, Guam or the US Virgin Islands?</h2>
-      <div class="opts">
-        <button type="button" data-a="pass">No</button>
-        <button type="button" data-a="fail">Yes</button>
       </div>
-    </div>
-  </div>
 
   <div class="nq" id="nq">
     <h2>A call probably won't help you today</h2>
@@ -249,7 +239,6 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
       <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You are aged 50 to 63</span></li>
       <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>A medical condition has kept you out of work for 12 months, or is expected to</span></li>
       <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You worked at least 5 of the last 10 years</span></li>
-      <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You have seen a doctor about it in the past year</span></li>
       <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You are not receiving Social Security benefits and not already represented</span></li>
     </ul>
     <p class="note"><strong>Already been denied?</strong> That is normal — most first applications are turned down. A denial does not end your claim, and appeals are often where cases are won. It is still worth calling.</p>
