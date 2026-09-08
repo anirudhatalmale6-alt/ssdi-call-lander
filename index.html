@@ -107,12 +107,12 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
          script rewrites it from PHONE_DIAL, but if the script never runs the
          button must still dial — a call page whose button does nothing is
          worse than no page at all. Keep the two numbers in step. -->
-    <a class="call-btn" id="callMain" href="tel:+18488636987">
+    <a class="call-btn" id="callMain" href="tel:+18775799634">
       <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg>
       <span>Call Now</span>
     </a>
-    <span class="call-num" id="callNum">(848) 863-6987</span>
-    <p class="call-sub" id="callSub">Lines open 8:00am – 8:00pm ET, Monday to Saturday</p>
+    <span class="call-num" id="callNum">(877) 579-9634</span>
+    <p class="call-sub" id="callSub">Lines open 9:00am – 9:00pm ET, seven days a week</p>
 
     <div class="tbadges">
       <span class="tbadge"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.6 3.8 10.7 9 12 5.2-1.3 9-6.4 9-12V5l-9-4z"/></svg>Confidential</span>
@@ -147,7 +147,7 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
 
 <div class="sticky">
   <div class="sticky-in">
-    <a class="call-btn" id="callSticky" href="tel:+18488636987">
+    <a class="call-btn" id="callSticky" href="tel:+18775799634">
       <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1l-2.3 2.2z"/></svg>
       <span id="stickyTxt">Call Now — Free</span>
     </a>
@@ -178,15 +178,16 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
    international form. PHONE_DISPLAY is only what the visitor reads.
    Keeping them separate means a pretty format can never break dialling.
    ------------------------------------------------------------------ */
-var PHONE_DISPLAY = '(848) 863-6987';
-var PHONE_DIAL    = '+18488636987';
+var PHONE_DISPLAY = '(877) 579-9634';
+var PHONE_DIAL    = '+18775799634';
 var OPERATOR      = 'Legal Advocate Group';
 
-/* Business hours in US Eastern, 24h. Saturday included, Sunday closed.
+/* Business hours in US Eastern, 24h. The buyer's intake centre runs
+   9am-9pm ET every day, so all seven days are open.
    These only change what the page SAYS — the button always dials, because
    a visitor who wants to call at 2am should never be blocked from trying.
    Telling them the line is closed is honest; disabling the button is not. */
-var OPEN_HOUR = 8, CLOSE_HOUR = 20, OPEN_DAYS = [1,2,3,4,5,6];
+var OPEN_HOUR = 9, CLOSE_HOUR = 21, OPEN_DAYS = [0,1,2,3,4,5,6];
 
 /* ------------------------------------------------------------------ */
 
@@ -216,7 +217,7 @@ function refreshStatus(){
   if(open){
     dot.className = 'dot';
     txt.textContent = 'Open now';
-    sub.textContent = 'Lines open 8:00am – 8:00pm ET, Monday to Saturday';
+    sub.textContent = 'Lines open 9:00am – 9:00pm ET, seven days a week';
     stk.textContent = 'Call Now — Free';
   }else{
     dot.className = 'dot off';
@@ -224,7 +225,7 @@ function refreshStatus(){
     /* Say when they can get through rather than just "closed" — a visitor
        who knows the time to call back is still a lead; one who feels the
        door is shut is gone. */
-    sub.textContent = 'Lines are closed right now. Open 8:00am – 8:00pm ET, Monday to Saturday — you can still call and leave a message.';
+    sub.textContent = 'Lines are closed right now. Open 9:00am – 9:00pm ET, seven days a week — you can still call and leave a message.';
     stk.textContent = 'Call & leave a message';
   }
 }
