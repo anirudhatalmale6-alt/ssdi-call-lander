@@ -60,6 +60,36 @@ a{color:inherit;text-decoration:none}
 .qual li svg{width:20px;height:20px;fill:var(--teal);flex:none;margin-top:2px}
 .qual .note{margin:16px 0 0;padding-top:15px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
 
+
+/* Qualifier. Shown only when JavaScript runs — with it off the call box is
+   never hidden in the first place, so the page still dials. */
+.gate{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:26px 24px;margin:22px 0 18px}
+.gate .step{display:none}
+.gate .step.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.gate .qnum{font-size:11.5px;font-weight:800;color:var(--teal);letter-spacing:.6px;text-transform:uppercase}
+.gate h2{font-size:21px;color:var(--navy);margin:8px 0 18px;font-weight:800;letter-spacing:-.3px;line-height:1.3}
+.gate .opts{display:grid;gap:11px}
+.gate button{width:100%;text-align:left;background:#fff;border:2px solid var(--line);border-radius:14px;padding:15px 17px;font-size:16px;font-weight:700;color:var(--navy);font-family:inherit;cursor:pointer;transition:all .14s}
+.gate button:hover{border-color:var(--teal);background:var(--teal-soft)}
+.gate button:active{transform:scale(.99)}
+.gate .bar{height:5px;background:var(--navy-soft);border-radius:99px;margin-bottom:18px;overflow:hidden}
+.gate .bar>i{display:block;height:100%;width:33%;background:linear-gradient(90deg,var(--teal),var(--teal2));border-radius:99px;transition:width .35s ease}
+
+.prep{display:none;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow-sm);margin:18px 0}
+.prep.on{display:block}
+.prep h2{font-size:17px;color:var(--navy);margin:0 0 14px;font-weight:800;letter-spacing:-.2px}
+.prep ol{margin:0;padding-left:20px;display:grid;gap:11px}
+.prep li{font-size:15px;color:var(--ink);line-height:1.5}
+.prep li b{color:var(--navy)}
+.prep .fine{margin:14px 0 0;padding-top:13px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+
+.nq{display:none;background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 24px;box-shadow:var(--shadow);margin:22px 0;text-align:center}
+.nq.on{display:block}
+.nq h2{font-size:21px;color:var(--navy);margin:0 0 10px;font-weight:800;letter-spacing:-.3px}
+.nq p{font-size:15px;color:var(--muted);margin:0 0 14px;line-height:1.55}
+.nq a.ssa{display:inline-block;background:var(--navy);color:#fff;border-radius:12px;padding:13px 22px;font-weight:800;font-size:15px}
+
 .how{margin:24px 0 8px}
 .how h2{font-size:18px;color:var(--navy);margin:0 0 14px;font-weight:800;text-align:center;letter-spacing:-.2px}
 .steps{display:grid;gap:12px}
@@ -102,6 +132,44 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
     <p>Speak with someone now about whether a Social Security Disability claim may be available to you. The call is free and there is no obligation.</p>
   </div>
 
+  <div class="gate" id="gate" hidden>
+    <div class="bar"><i id="gbar"></i></div>
+
+    <div class="step on" data-q="0">
+      <span class="qnum">Question 1 of 3</span>
+      <h2>Are you currently unable to work because of a medical condition?</h2>
+      <div class="opts">
+        <button type="button" data-a="yes">Yes</button>
+        <button type="button" data-a="no">No</button>
+      </div>
+    </div>
+
+    <div class="step" data-q="1">
+      <span class="qnum">Question 2 of 3</span>
+      <h2>Has it kept you out of work for 12 months, or is it expected to?</h2>
+      <div class="opts">
+        <button type="button" data-a="yes">Yes</button>
+        <button type="button" data-a="unsure">I'm not sure</button>
+        <button type="button" data-a="no">No, less than that</button>
+      </div>
+    </div>
+
+    <div class="step" data-q="2">
+      <span class="qnum">Question 3 of 3</span>
+      <h2>Are you already receiving Social Security Disability benefits?</h2>
+      <div class="opts">
+        <button type="button" data-a="no">No</button>
+        <button type="button" data-a="yes">Yes, I already receive them</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="nq" id="nq">
+    <h2>A call probably won't help you today</h2>
+    <p>From what you have told us, this service is unlikely to be the right fit — and we would rather say so than take up your time. Nothing here stops you applying yourself, free of charge, directly with the Social Security Administration.</p>
+    <a class="ssa" href="https://www.ssa.gov/benefits/disability/" target="_blank" rel="noopener">Apply free at ssa.gov</a>
+  </div>
+
   <div class="callbox">
     <span class="free">100% FREE CALL · NO OBLIGATION</span>
     <!-- The number is hard-coded here as well as set by script below. The
@@ -120,6 +188,16 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
       <span class="tbadge"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg>No fee unless you win</span>
       <span class="tbadge"><svg viewBox="0 0 24 24"><path d="M12 2 4 6v6c0 5 3.4 9.7 8 10.9 4.6-1.2 8-5.9 8-10.9V6l-8-4z"/></svg>Nationwide</span>
     </div>
+  </div>
+
+  <div class="prep" id="prep">
+    <h2>What happens when you call</h2>
+    <ol>
+      <li><b>A few short questions</b> about your condition, your work history and where you are in the process. Two or three minutes.</li>
+      <li><b>They tell you whether a claim looks possible.</b> If it doesn't, they will say so.</li>
+      <li><b>If you want to go ahead, you sign a representation agreement.</b> Nothing is payable upfront — a representative is normally paid only if your claim is approved, out of back pay, at rates the SSA sets.</li>
+    </ol>
+    <p class="fine">You can say no at any point, and you are never obliged to sign anything on the call.</p>
   </div>
 
   <div class="qual">
@@ -248,6 +326,73 @@ function trackCall(){
 mainBtn.addEventListener('click', trackCall);
 stickyBtn.addEventListener('click', trackCall);
 numEl.addEventListener('click', trackCall);
+
+/* ------------------------------------------------------------------
+   Qualifier.
+
+   The buyer pays $200 only when a caller signs a retainer, and pays
+   nothing for a call that goes nowhere. So volume is actively harmful:
+   every call costs the same in ad spend whether or not it can ever pay.
+   Three questions remove the people who cannot qualify, which is the
+   difference between the bottom and the top of their 7-19% signing range.
+
+   Everything here is progressive enhancement. The call box starts VISIBLE
+   in the markup and is hidden by this script; if the script never runs the
+   visitor simply gets a page that dials, which is the safe failure.
+   ------------------------------------------------------------------ */
+(function(){
+  var gate   = document.getElementById('gate');
+  var nq     = document.getElementById('nq');
+  var prep   = document.getElementById('prep');
+  var box    = document.querySelector('.callbox');
+  var sticky = document.querySelector('.sticky');
+  var bar    = document.getElementById('gbar');
+  if(!gate || !box) return;
+
+  gate.hidden = false;
+  box.style.display = 'none';
+  if(sticky) sticky.style.display = 'none';
+
+  var steps = gate.querySelectorAll('.step');
+  var at = 0;
+
+  function show(i){
+    for(var j=0;j<steps.length;j++) steps[j].className = 'step' + (j===i?' on':'');
+    bar.style.width = Math.round(((i+1)/steps.length)*100) + '%';
+  }
+
+  function pass(){
+    gate.style.display = 'none';
+    box.style.display  = '';
+    if(sticky) sticky.style.display = '';
+    if(prep) prep.className = 'prep on';
+    box.scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  function fail(){
+    gate.style.display = 'none';
+    nq.className = 'nq on';
+    /* No phone number on this path. A caller who cannot qualify costs the
+       buyer's intake time and can never pay, so sending them is worse than
+       sending nobody. */
+  }
+
+  gate.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-a]');
+    if(!b) return;
+    var a = b.getAttribute('data-a');
+    /* Only definite noes screen out. "Not sure" goes through — someone
+       uncertain about their own timeline is exactly who intake is for. */
+    if((at === 0 && a === 'no') || (at === 1 && a === 'no') || (at === 2 && a === 'yes')){
+      return fail();
+    }
+    at++;
+    if(at >= steps.length) return pass();
+    show(at);
+  });
+
+  show(0);
+})();
 
 /* View event, same as the funnel, so the two campaigns report alike. */
 if(typeof rcaTrackStart === 'function'){ rcaTrackStart(); }
