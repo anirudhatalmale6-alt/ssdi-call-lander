@@ -135,31 +135,73 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
   <div class="gate" id="gate" hidden>
     <div class="bar"><i id="gbar"></i></div>
 
+    <!-- Question order is deliberate: the criteria that reject the most people
+         come first, so anyone who cannot qualify finds out in one tap instead
+         of seven. Every question below is one of the buyer's stated transfer
+         criteria — nothing here is curiosity. -->
+
     <div class="step on" data-q="0">
-      <span class="qnum">Question 1 of 3</span>
-      <h2>Are you currently unable to work because of a medical condition?</h2>
+      <span class="qnum">Question 1 of 7</span>
+      <h2>What is your age?</h2>
       <div class="opts">
-        <button type="button" data-a="yes">Yes</button>
-        <button type="button" data-a="no">No</button>
+        <button type="button" data-a="pass">50 to 63</button>
+        <button type="button" data-a="fail">Under 50</button>
+        <button type="button" data-a="fail">64 or older</button>
       </div>
     </div>
 
     <div class="step" data-q="1">
-      <span class="qnum">Question 2 of 3</span>
-      <h2>Has it kept you out of work for 12 months, or is it expected to?</h2>
+      <span class="qnum">Question 2 of 7</span>
+      <h2>Has a medical condition kept you from working for 12 months, or is it expected to?</h2>
       <div class="opts">
-        <button type="button" data-a="yes">Yes</button>
-        <button type="button" data-a="unsure">I'm not sure</button>
-        <button type="button" data-a="no">No, less than that</button>
+        <button type="button" data-a="pass">Yes</button>
+        <button type="button" data-a="pass">I'm not sure</button>
+        <button type="button" data-a="fail">No, less than that</button>
       </div>
     </div>
 
     <div class="step" data-q="2">
-      <span class="qnum">Question 3 of 3</span>
-      <h2>Are you already receiving Social Security Disability benefits?</h2>
+      <span class="qnum">Question 3 of 7</span>
+      <h2>Have you worked at least 5 of the last 10 years?</h2>
       <div class="opts">
-        <button type="button" data-a="no">No</button>
-        <button type="button" data-a="yes">Yes, I already receive them</button>
+        <button type="button" data-a="pass">Yes</button>
+        <button type="button" data-a="fail">No</button>
+      </div>
+    </div>
+
+    <div class="step" data-q="3">
+      <span class="qnum">Question 4 of 7</span>
+      <h2>Have you seen a doctor about the condition in the past year?</h2>
+      <div class="opts">
+        <button type="button" data-a="pass">Yes</button>
+        <button type="button" data-a="fail">No</button>
+      </div>
+    </div>
+
+    <div class="step" data-q="4">
+      <span class="qnum">Question 5 of 7</span>
+      <h2>Are you currently receiving any Social Security benefits?</h2>
+      <div class="opts">
+        <button type="button" data-a="pass">No</button>
+        <button type="button" data-a="fail">Yes</button>
+      </div>
+    </div>
+
+    <div class="step" data-q="5">
+      <span class="qnum">Question 6 of 7</span>
+      <h2>Are you already working with an attorney or representative on this claim?</h2>
+      <div class="opts">
+        <button type="button" data-a="pass">No</button>
+        <button type="button" data-a="fail">Yes</button>
+      </div>
+    </div>
+
+    <div class="step" data-q="6">
+      <span class="qnum">Question 7 of 7</span>
+      <h2>Do you live in Alaska, Puerto Rico, Guam or the US Virgin Islands?</h2>
+      <div class="opts">
+        <button type="button" data-a="pass">No</button>
+        <button type="button" data-a="fail">Yes</button>
       </div>
     </div>
   </div>
@@ -195,7 +237,7 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
     <ol>
       <li><b>A few short questions</b> about your condition, your work history and where you are in the process. Two or three minutes.</li>
       <li><b>They tell you whether a claim looks possible.</b> If it doesn't, they will say so.</li>
-      <li><b>If you want to go ahead, you sign a representation agreement.</b> Nothing is payable upfront — a representative is normally paid only if your claim is approved, out of back pay, at rates the SSA sets.</li>
+      <li><b>If you want to go ahead, you sign an appointment of representative form (SSA-1696).</b> Nothing is payable upfront — a representative is normally paid only if your claim is approved, out of back pay, at rates the SSA sets.</li>
     </ol>
     <p class="fine">You can say no at any point, and you are never obliged to sign anything on the call.</p>
   </div>
@@ -204,11 +246,11 @@ footer .links{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 0}
     <h2>You may have a claim if…</h2>
     <p class="lede">Most people who qualify meet all of the following. If that sounds like you, it is worth a call.</p>
     <ul>
+      <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You are aged 50 to 63</span></li>
       <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>A medical condition has kept you out of work for 12 months, or is expected to</span></li>
-      <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You are between 18 and 65</span></li>
-      <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You have worked and paid into Social Security in recent years</span></li>
-      <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You are being treated by a doctor for the condition</span></li>
-      <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You are not already receiving disability benefits</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You worked at least 5 of the last 10 years</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You have seen a doctor about it in the past year</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 15l-5-5 1.4-1.4L11 14.2l6.6-6.6L19 9l-8 8z"/></svg><span>You are not receiving Social Security benefits and not already represented</span></li>
     </ul>
     <p class="note"><strong>Already been denied?</strong> That is normal — most first applications are turned down. A denial does not end your claim, and appeals are often where cases are won. It is still worth calling.</p>
   </div>
@@ -380,12 +422,11 @@ numEl.addEventListener('click', trackCall);
   gate.addEventListener('click', function(e){
     var b = e.target.closest('button[data-a]');
     if(!b) return;
-    var a = b.getAttribute('data-a');
-    /* Only definite noes screen out. "Not sure" goes through — someone
-       uncertain about their own timeline is exactly who intake is for. */
-    if((at === 0 && a === 'no') || (at === 1 && a === 'no') || (at === 2 && a === 'yes')){
-      return fail();
-    }
+    /* Each answer carries its own verdict, so adding or reordering a
+       question never means editing this logic. "I'm not sure" is marked
+       pass on purpose — someone uncertain about their own timeline is
+       exactly who the intake call exists to sort out. */
+    if(b.getAttribute('data-a') === 'fail') return fail();
     at++;
     if(at >= steps.length) return pass();
     show(at);
